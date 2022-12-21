@@ -53,17 +53,17 @@ class DetailScreen extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-            const  Icon(
+              const Icon(
                 Icons.calendar_month_outlined,
                 size: 28,
                 color: kPrimaryColor,
               ),
-             const SizedBox(
+              const SizedBox(
                 width: 8,
               ),
               Text(
                 stadiumDetail["date"]!,
-                style:const TextStyle(
+                style: const TextStyle(
                   fontSize: 19,
                   fontWeight: FontWeight.bold,
                 ),
@@ -74,13 +74,16 @@ class DetailScreen extends StatelessWidget {
             height: 15,
           ),
           Center(
-            child: ClipRRect(
-              borderRadius: BorderRadius.circular(12),
-              child: Image.network(
-                stadiumDetail["image"]!,
-                height: 200,
-                width: 340,
-                fit: BoxFit.cover,
+            child: Hero(
+              tag: stadiumDetail["id"]!,
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(12),
+                child: Image.network(
+                  stadiumDetail["image"]!,
+                  height: 200,
+                  width: 340,
+                  fit: BoxFit.cover,
+                ),
               ),
             ),
           ),
@@ -142,7 +145,7 @@ class DetailScreen extends StatelessWidget {
                       padding: const EdgeInsets.all(8.0),
                       child: Row(
                         children: [
-                         const Icon(
+                          const Icon(
                             Icons.dining_rounded,
                             size: 22,
                             color: kPrimaryColor,
@@ -153,20 +156,22 @@ class DetailScreen extends StatelessWidget {
                             width: 22,
                             decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(4),
-                                color:const  Color(0xff088F81).withOpacity(0.2)),
+                                color:
+                                    const Color(0xff088F81).withOpacity(0.2)),
                             child: const Icon(
                               Icons.train,
                               color: kPrimaryColor,
                             ),
                           ),
-                         const Spacer(),
+                          const Spacer(),
                           Container(
                             height: 22,
-                            padding:const EdgeInsets.symmetric(
+                            padding: const EdgeInsets.symmetric(
                                 horizontal: 6, vertical: 2),
                             decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(4),
-                                color:const Color(0xff088F81).withOpacity(0.2)),
+                                color:
+                                    const Color(0xff088F81).withOpacity(0.2)),
                             child: Row(
                               children: const [
                                 Icon(
@@ -191,11 +196,12 @@ class DetailScreen extends StatelessWidget {
                         ],
                       ),
                     ),
-                   const SizedBox(
+                    const SizedBox(
                       height: 18,
                     ),
-                  const  BookNowCard(),
-                   const BookNowCard(price: "6000", overs: "30", time: "03:00 am"),
+                    const BookNowCard(),
+                    const BookNowCard(
+                        price: "6000", overs: "30", time: "03:00 am"),
                   ],
                 ),
               ),

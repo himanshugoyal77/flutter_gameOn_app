@@ -39,13 +39,16 @@ class GroundCard extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  ClipRRect(
-                    borderRadius: BorderRadius.circular(12),
-                    child: Image.network(
-                      stadium["image"]!,
-                      height: 120,
-                      width: 100,
-                      fit: BoxFit.cover,
+                  Hero(
+                    tag: stadium["id"]!,
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(12),
+                      child: Image.network(
+                        stadium["image"]!,
+                        height: 120,
+                        width: 100,
+                        fit: BoxFit.cover,
+                      ),
                     ),
                   ),
                   Padding(

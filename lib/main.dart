@@ -1,5 +1,3 @@
-
-
 import 'package:flutter/material.dart';
 import 'package:game_on/constants.dart';
 import 'package:game_on/modals/login_modal.dart';
@@ -15,7 +13,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        title: 'Flutter Demo',
+        title: 'Game On',
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
           primarySwatch: kPrimaryColor,
